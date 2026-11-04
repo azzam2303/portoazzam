@@ -450,6 +450,17 @@ header {
     font-size: 15px;
 }
 
+.instagram {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.instagram:hover {
+    color: var(--orange);
+}
+
 /* FOOTER */
 
 footer {
