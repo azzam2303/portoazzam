@@ -444,21 +444,63 @@ header {
     line-height: 1.8;
 }
 
-.email {
-    margin-top: 20px;
-    color: var(--muted);
-    font-size: 15px;
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
 }
 
-.instagram {
-    display: inline-block;
-    margin-top: 10px;
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid #ffffff18;
+    border-radius: 12px;
     color: var(--muted);
-    font-size: 15px;
+    font-size: 14px;
+    transition: color .3s, border-color .3s, background .3s;
 }
 
-.instagram:hover {
+.contact-link:hover {
+    color: var(--text);
+    border-color: var(--orange);
+    background: #ffffff08;
+}
+
+.contact-icon {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #ff70431a;
     color: var(--orange);
+}
+
+.contact-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.contact-icon .icon-dot {
+    fill: currentColor;
+    stroke: none;
+}
+
+.linkedin-icon {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 /* FOOTER */
