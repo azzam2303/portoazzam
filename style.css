@@ -1,10 +1,29 @@
 :root {
+    color-scheme: dark;
     --bg: #0b0e13;
     --card: #131923;
     --text: #f4f5f7;
     --muted: #929ba9;
     --orange: #ff7043;
     --blue: #7c9cff;
+    --section-bg: #10151e;
+    --border: rgba(255, 255, 255, .12);
+    --border-strong: rgba(255, 255, 255, .19);
+    --hover-surface: rgba(255, 255, 255, .03);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --bg: #e8ebef;
+        --card: #f0f2f5;
+        --text: #202630;
+        --muted: #626c79;
+        --section-bg: #dfe3e8;
+        --border: rgba(17, 24, 39, .1);
+        --border-strong: rgba(17, 24, 39, .17);
+        --hover-surface: rgba(17, 24, 39, .04);
+    }
 }
 
 * {
@@ -29,7 +48,7 @@ a {
 header {
     width: 100%;
     padding: 25px 8%;
-    border-bottom: 1px solid #ffffff10;
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar {
@@ -63,9 +82,33 @@ header {
     color: var(--orange);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.language-btn {
+    min-width: 42px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.language-btn:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
 .nav-button {
     padding: 12px 22px;
-    border: 1px solid #ffffff30;
+    border: 1px solid var(--border-strong);
     border-radius: 30px;
     font-size: 13px;
 }
@@ -73,7 +116,7 @@ header {
 .menu-btn {
     display: none;
     background: none;
-    color: white;
+    color: var(--text);
     border: none;
     font-size: 25px;
     cursor: pointer;
@@ -95,7 +138,7 @@ header {
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
-    border: 1px solid #ffffff20;
+    border: 1px solid var(--border-strong);
     border-radius: 30px;
     font-size: 10px;
     letter-spacing: 1px;
@@ -117,10 +160,10 @@ header {
     letter-spacing: -4px;
 }
 
-.hero h1 span,
-.section-title span,
-.about h2 span,
-.contact h2 span {
+.hero h1 .title-accent,
+.section-title .title-accent,
+.about h2 .title-accent,
+.contact h2 .title-accent {
     color: var(--orange);
 }
 
@@ -159,7 +202,7 @@ header {
 }
 
 .secondary-btn {
-    border: 1px solid #ffffff30;
+    border: 1px solid var(--border-strong);
 }
 
 .secondary-btn:hover {
@@ -190,7 +233,7 @@ header {
 
 .image-frame {
     height: 440px;
-    border: 1px solid #ffffff30;
+    border: 1px solid var(--border-strong);
     padding: 10px;
     transform: rotate(2deg);
     background: var(--card);
@@ -254,7 +297,7 @@ header {
 /* ABOUT */
 
 .about {
-    background: #10151e;
+    background: var(--section-bg);
 }
 
 .about-content {
@@ -307,7 +350,7 @@ header {
 .skill-card {
     padding: 35px;
     background: var(--card);
-    border: 1px solid #ffffff10;
+    border: 1px solid var(--border);
     transition: .3s;
     position: relative;
 }
@@ -351,7 +394,7 @@ header {
 /* PROJECTS */
 
 .projects {
-    background: #10151e;
+    background: var(--section-bg);
 }
 
 .project-heading {
@@ -458,7 +501,7 @@ header {
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
-    border: 1px solid #ffffff18;
+    border: 1px solid var(--border);
     border-radius: 12px;
     color: var(--muted);
     font-size: 14px;
@@ -468,7 +511,7 @@ header {
 .contact-link:hover {
     color: var(--text);
     border-color: var(--orange);
-    background: #ffffff08;
+    background: var(--hover-surface);
 }
 
 .contact-icon {
@@ -507,7 +550,7 @@ header {
 
 footer {
     padding: 30px 10%;
-    border-top: 1px solid #ffffff15;
+    border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -573,6 +616,10 @@ footer > a:last-child {
         display: none;
     }
 
+    .nav-actions {
+        gap: 10px;
+    }
+
     .menu-btn {
         display: block;
     }
@@ -583,7 +630,7 @@ footer > a:last-child {
         top: 75px;
         left: 0;
         width: 100%;
-        background: #131923;
+        background: var(--card);
         padding: 25px;
         flex-direction: column;
         gap: 25px;

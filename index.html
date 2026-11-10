@@ -19,16 +19,19 @@
             <a href="#" class="logo">AZ<span>.</span></a>
 
             <div class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" data-i18n="navHome">Beranda</a>
+                <a href="#about" data-i18n="navAbout">Tentang</a>
+                <a href="#skills" data-i18n="navSkills">Keahlian</a>
+                <a href="#projects" data-i18n="navProjects">Proyek</a>
+                <a href="#contact" data-i18n="navContact">Kontak</a>
             </div>
 
-            <a href="#contact" class="nav-button">Let's Talk ↗</a>
+            <div class="nav-actions">
+                <button class="language-btn" id="languageBtn" type="button" aria-label="Switch language">EN</button>
+                <a href="#contact" class="nav-button" data-i18n="navCta">Hubungi Saya ↗</a>
 
-            <button class="menu-btn" id="menuBtn">☰</button>
+                <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+            </div>
         </nav>
     </header>
 
@@ -38,37 +41,33 @@
         <div class="hero-content">
             <div class="availability">
                 <span class="dot"></span>
-                STUDENT & ASPIRING WEB DEVELOPER
+                <span data-i18n="availability">PELAJAR & CALON WEB DEVELOPER</span>
             </div>
 
             <h1>
-                Building<br>
-                Digital <span>Experiences.</span>
+                <span data-i18n="heroTitle">Membangun</span><br>
+                <span class="title-accent" data-i18n="heroTitleAccent">Pengalaman Digital.</span>
             </h1>
 
-            <p>
-                Halo, saya Azzam Fadhlan Efrizal Yusuf.
-                Seorang pelajar yang memiliki ketertarikan
-                dalam dunia teknologi, desain, dan pengembangan web.
-            </p>
+            <p data-i18n="heroDescription">Halo, saya Azzam Fadhlan Efrizal Yusuf. Seorang pelajar yang tertarik pada teknologi, desain, dan pengembangan web.</p>
 
             <div class="hero-buttons">
-                <a href="#projects" class="primary-btn">Explore My Work ↗</a>
-                <a href="#about" class="secondary-btn">More About Me</a>
+                <a href="#projects" class="primary-btn" data-i18n="heroProjects">Lihat Karya Saya ↗</a>
+                <a href="#about" class="secondary-btn" data-i18n="heroAbout">Kenali Saya</a>
             </div>
 
             <div class="hero-info">
                 <div>
                     <h3>HTML</h3>
-                    <small>Structure</small>
+                    <small data-i18n="structure">Struktur</small>
                 </div>
                 <div>
                     <h3>CSS</h3>
-                    <small>Design</small>
+                    <small data-i18n="design">Desain</small>
                 </div>
                 <div>
                     <h3>JS</h3>
-                    <small>Interaction</small>
+                    <small data-i18n="interaction">Interaksi</small>
                 </div>
             </div>
         </div>
@@ -79,11 +78,11 @@
             </div>
 
             <div class="image-caption">
-                <span>BASED IN</span>
+                <span data-i18n="basedIn">BERDOMISILI DI</span>
                 <h3>Jakarta, Indonesia.</h3>
             </div>
 
-            <div class="floating-text">CREATIVE MINDSET ✳</div>
+            <div class="floating-text" data-i18n="creativeMindset">POLA PIKIR KREATIF ✳</div>
         </div>
 
     </section>
@@ -91,43 +90,33 @@
     <!-- ABOUT -->
     <section class="about section" id="about">
 
-        <div class="section-label">01 / ABOUT ME</div>
+        <div class="section-label" data-i18n="aboutLabel">01 / TENTANG SAYA</div>
 
         <div class="about-content">
             <h2>
-                Turning ideas into
-                <span>digital reality.</span>
+                <span data-i18n="aboutTitle">Mengubah ide menjadi</span>
+                <span class="title-accent" data-i18n="aboutTitleAccent">kenyataan digital.</span>
             </h2>
 
             <div class="about-description">
-                <p>
-                    Saya adalah pelajar SMKN 20 Jakarta yang
-                    memiliki minat besar dalam bidang teknologi
-                    dan pengembangan website.
-                </p>
+                <p data-i18n="aboutFirst">Saya adalah pelajar SMKN 20 Jakarta yang memiliki minat besar pada teknologi dan pengembangan website.</p>
 
-                <p>
-                    Saya memiliki kemampuan dalam membuat dan
-                    mendesain website menggunakan HTML, CSS,
-                    dan JavaScript. Saya senang mempelajari
-                    hal baru serta mengembangkan ide menjadi
-                    sebuah karya digital.
-                </p>
+                <p data-i18n="aboutSecond">Saya dapat membuat dan mendesain website menggunakan HTML, CSS, dan JavaScript. Saya senang mempelajari hal baru dan mengembangkan ide menjadi karya digital.</p>
 
                 <div class="personal-data">
                     <div>
-                        <small>FULL NAME</small>
+                        <small data-i18n="fullName">NAMA LENGKAP</small>
                         <h4>Azzam Fadhlan Efrizal Yusuf</h4>
                     </div>
 
                     <div>
-                        <small>EDUCATION</small>
+                        <small data-i18n="education">PENDIDIKAN</small>
                         <h4>SMKN 20 Jakarta</h4>
                     </div>
 
                     <div>
-                        <small>INTEREST</small>
-                        <h4>Web Development & Design</h4>
+                        <small data-i18n="interest">MINAT</small>
+                        <h4 data-i18n="interestValue">Pengembangan Web & Desain</h4>
                     </div>
                 </div>
             </div>
@@ -137,10 +126,10 @@
     <!-- SKILLS -->
     <section class="skills section" id="skills">
 
-        <div class="section-label">02 / MY EXPERTISE</div>
+        <div class="section-label" data-i18n="skillsLabel">02 / KEAHLIAN SAYA</div>
 
         <h2 class="section-title">
-            Skills & <span>Technologies.</span>
+            <span data-i18n="skillsTitle">Keahlian &</span> <span class="title-accent" data-i18n="skillsTitleAccent">Teknologi.</span>
         </h2>
 
         <div class="skill-grid">
@@ -149,21 +138,21 @@
                 <span class="skill-number">01</span>
                 <div class="skill-icon">5</div>
                 <h3>HTML</h3>
-                <p>Building structured and semantic web pages.</p>
+                <p data-i18n="skillHtml">Membangun halaman web yang terstruktur dan semantik.</p>
             </div>
 
             <div class="skill-card">
                 <span class="skill-number">02</span>
                 <div class="skill-icon">#</div>
                 <h3>CSS</h3>
-                <p>Creating modern, responsive and attractive designs.</p>
+                <p data-i18n="skillCss">Membuat desain modern, responsif, dan menarik.</p>
             </div>
 
             <div class="skill-card">
                 <span class="skill-number">03</span>
                 <div class="skill-icon">JS</div>
                 <h3>JavaScript</h3>
-                <p>Adding interaction and functionality to websites.</p>
+                <p data-i18n="skillJs">Menambahkan interaksi dan fungsionalitas pada website.</p>
             </div>
 
         </div>
@@ -172,19 +161,19 @@
     <!-- PROJECTS -->
     <section class="projects section" id="projects">
 
-        <div class="section-label">03 / SELECTED WORK</div>
+        <div class="section-label" data-i18n="projectsLabel">03 / PROYEK PILIHAN</div>
 
         <div class="project-heading">
             <h2 class="section-title">
-                Things I've <span>Built.</span>
+                <span data-i18n="projectsTitle">Yang Telah</span> <span class="title-accent" data-i18n="projectsTitleAccent">Saya Buat.</span>
             </h2>
-            <p>A collection of my learning journey and projects.</p>
+            <p data-i18n="projectsDescription">Kumpulan perjalanan belajar dan proyek saya.</p>
         </div>
 
         <div class="project-grid">
 
             <div class="project-card">
-                <div class="project-visual project-one" role="img" aria-label="Tangkapan layar proyek Az Finance"></div>
+                <div class="project-visual project-one" role="img" aria-label="Tangkapan layar proyek Az Finance" data-i18n-aria-label="projectFinanceAlt"></div>
 
                 <div class="project-info">
                     <div>
@@ -196,7 +185,7 @@
             </div>
 
             <div class="project-card">
-                <div class="project-visual project-two" role="img" aria-label="Tangkapan layar Web Kelurahan Cipete Selatan"></div>
+                <div class="project-visual project-two" role="img" aria-label="Tangkapan layar Web Kelurahan Cipete Selatan" data-i18n-aria-label="projectVillageAlt"></div>
 
                 <div class="project-info">
                     <div>
@@ -214,17 +203,14 @@
     <!-- CONTACT -->
     <section class="contact section" id="contact">
 
-        <div class="section-label">04 / GET IN TOUCH</div>
+        <div class="section-label" data-i18n="contactLabel">04 / HUBUNGI SAYA</div>
 
         <h2>
-            Have an idea?<br>
-            Let's make it <span>happen.</span>
+            <span data-i18n="contactTitle">Punya ide?</span><br>
+            <span data-i18n="contactTitleSecond">Mari kita</span> <span class="title-accent" data-i18n="contactTitleAccent">wujudkan.</span>
         </h2>
 
-        <p>
-            Feel free to reach out for collaboration,
-            questions, or just to say hello.
-        </p>
+        <p data-i18n="contactDescription">Silakan hubungi saya untuk berkolaborasi, bertanya, atau sekadar menyapa.</p>
 
         <div class="contact-links">
             <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=azzamfadhlan23%40gmail.com" target="_blank" rel="noopener noreferrer">
@@ -247,7 +233,7 @@
             </a>
             <a class="contact-link" href="https://www.linkedin.com/in/azzam-fadhlan-efrizal-yusuf-a210b143b" target="_blank" rel="noopener noreferrer">
                 <span class="contact-icon linkedin-icon" aria-hidden="true">in</span>
-                <span>MY PROFILE</span>
+                <span data-i18n="myProfile">PROFIL SAYA</span>
             </a>
         </div>
 
@@ -257,9 +243,9 @@
     <footer>
         <a href="#" class="logo">AZ<span>.</span></a>
 
-        <p>Designed & Built by Azzam Fadhlan © 2026</p>
+        <p data-i18n="footerCredit">Dirancang & Dibuat oleh Azzam Fadhlan © 2026</p>
 
-        <a href="#home">BACK TO TOP ↑</a>
+        <a href="#home" data-i18n="backToTop">KEMBALI KE ATAS ↑</a>
     </footer>
 
     <script src="script.js"></script>
