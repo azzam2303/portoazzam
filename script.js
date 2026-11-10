@@ -1,6 +1,9 @@
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 const languageBtn = document.getElementById("languageBtn");
+const themeBtn = document.getElementById("themeBtn");
+const themeStorageKey = "azzam-portfolio-theme";
+const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
 
 const translations = {
     id: {
@@ -10,6 +13,8 @@ const translations = {
         navProjects: "Proyek",
         navContact: "Kontak",
         navCta: "Hubungi Saya ↗",
+        themeLight: "Beralih ke mode terang",
+        themeDark: "Beralih ke mode gelap",
         menuOpen: "Buka navigasi",
         menuClose: "Tutup navigasi",
         availability: "PELAJAR & CALON WEB DEVELOPER",
@@ -60,6 +65,8 @@ const translations = {
         navProjects: "Projects",
         navContact: "Contact",
         navCta: "Let's Talk ↗",
+        themeLight: "Switch to light mode",
+        themeDark: "Switch to dark mode",
         menuOpen: "Open navigation",
         menuClose: "Close navigation",
         availability: "STUDENT & ASPIRING WEB DEVELOPER",
@@ -107,6 +114,40 @@ const translations = {
 
 let currentLanguage = "id";
 
+function getStoredTheme() {
+    try {
+        const theme = window.localStorage.getItem(themeStorageKey);
+        return theme === "light" || theme === "dark" ? theme : null;
+    } catch (error) {
+        console.warn("Could not read the saved theme preference.", error);
+        return null;
+    }
+}
+
+function saveTheme(theme) {
+    try {
+        window.localStorage.setItem(themeStorageKey, theme);
+    } catch (error) {
+        console.warn("Could not save the theme preference.", error);
+    }
+}
+
+let currentTheme = getStoredTheme() || (systemTheme.matches ? "light" : "dark");
+
+function setTheme(theme, persist = false) {
+    currentTheme = theme;
+    document.documentElement.dataset.theme = theme;
+    themeBtn.textContent = theme === "dark" ? "☀" : "☾";
+    themeBtn.setAttribute(
+        "aria-label",
+        translations[currentLanguage][theme === "dark" ? "themeLight" : "themeDark"]
+    );
+
+    if (persist) {
+        saveTheme(theme);
+    }
+}
+
 function setLanguage(language) {
     currentLanguage = language;
     document.documentElement.lang = language;
@@ -132,12 +173,27 @@ function setLanguage(language) {
             ? translations[language].menuClose
             : translations[language].menuOpen
     );
+    themeBtn.setAttribute(
+        "aria-label",
+        translations[language][currentTheme === "dark" ? "themeLight" : "themeDark"]
+    );
 }
 
+setTheme(currentTheme);
 setLanguage(currentLanguage);
 
 languageBtn.addEventListener("click", () => {
     setLanguage(currentLanguage === "id" ? "en" : "id");
+});
+
+themeBtn.addEventListener("click", () => {
+    setTheme(currentTheme === "dark" ? "light" : "dark", true);
+});
+
+systemTheme.addEventListener("change", event => {
+    if (!getStoredTheme()) {
+        setTheme(event.matches ? "light" : "dark");
+    }
 });
 
 // Mobile navigation
